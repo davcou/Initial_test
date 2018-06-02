@@ -1,3 +1,5 @@
+#First game ever
+
 import pygame
 import time
 import random
