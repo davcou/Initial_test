@@ -4,29 +4,37 @@ import pygame
 import time
 import random
 
-pygame.init()
+pygame.init()		#Start oygane
 
+#Define colours globally as tuples, since they are constant
 white = (255, 255, 255)
 black = (0, 0, 0)
 red = (255, 0, 0)
 green = (0, 255, 0)
 blue = (0, 0, 255)
 
+#Define a lot, to avoid hard coding
 screen_size = (800, 600)
 display_width = 800
 display_height = 600
 
+#Create the display
 gameDisplay = pygame.display.set_mode((display_width,display_height))
 pygame.display.set_caption("Slipther")
 
+"Start a counter (different word?)
 apples = []
 
-
+#For timing
 clock = pygame.time.Clock()
 
+#Set the font type and size
 font = pygame.font.SysFont(None, 25)
 
 class apple:
+    """
+    Class for creating apples
+    """
     def __init__(self):
 	self.x_pos = random.randrange(0,display_width-10)
 	self.y_pos = random.randrange(0,display_height-10)
@@ -47,7 +55,7 @@ def message_to_screen(msg, color):
     gameDisplay.blit(screen_text, [display_width/2, display_height/2])
 
 def gameLoop():
-
+    """ Main game loop """
 	gameExit = False
 	gameOver = False
 	
